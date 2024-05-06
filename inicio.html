@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/inicio.css">
+    <title>gym</title>
+</head>
+<body>
+    <div class="titulo"><h2> Bienvenido a tu asistente de gym</h2></div>
+
+    <div class="contenedor">
+        <div class="cont-inputs">
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" required>
+        </div>
+        <div>
+            <label for="altura">Altura (cm):</label>
+            <input type="number" id="altura" required>
+        </div>
+        <div>
+            <label for="">Objetivo:</label>
+            <select name="select">
+                <option value="value1">Aumentar masa muscular</option>
+                <option value="value2" selected>Bajar grasa</option>
+              </select>
+        </div>
+    </div>
+    <div class="cont-calcular">
+        <button onclick="calcularIMC()" class="btn-calcular">Calcular IMC</button>
+        <div id="resultado"></div>
+    </div>
+
+    <div class="cont-calcular">
+        <button onclick="mostrarPlan()" class="btn-calcular">Mostrar plan</button>
+        <div id="resultado2"></div>
+    </div>
+
+    
+</body>
+<script src="/inicio.js"></script>
+</html>

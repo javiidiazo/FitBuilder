@@ -26,6 +26,55 @@ body{
     margin-bottom: 20px;
 }
 
+/* inputs de peso y altura */
+.form_container{
+  margin-top: 3em;
+  display: flex;
+  gap: 2.5em;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.form_group{
+  position: relative;
+  --color:#5757577e
+}
+
+.form_input{
+  width: 100%;
+  background: none;
+  color: #706c6c;
+  font-size: 1rem;
+  padding: .6em .3em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color);
+  font-family: 'Roboto', sans-serif;
+}
+  
+.form_input:not(:placeholder-shown){
+  color: #9b9b9b;
+}
+  
+.form_input:focus + .form_label,
+.form_input:not(:placeholder-shown) + .form_label{
+  transform: translateY(-12px) scale(.7);
+  transform-origin: left top;
+  color: var(--logoBlue);
+}
+  
+.form_label{
+  color: var(--color);
+  cursor: text;
+  position: absolute;
+  color: var(--logoBlue);
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform .5s, color .3s;
+}
+
 .contenedor{
     width: 100%;
     display: flex;
@@ -51,3 +100,50 @@ body{
     border-radius: 4px;
     margin-bottom: 5px;
 }
+
+
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .floor {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #bbb;
+  }
+  
+  .mancuerna {
+    width: 100px;
+    height: 50px;
+    background-color: #333;
+    position: absolute;
+    bottom: 20px; /* Altura inicial */
+    animation: mancuerna-fall 2s linear forwards, floor-break 0.1s 2s linear forwards;
+  }
+  
+  @keyframes mancuerna-fall {
+    0% {
+      transform: translateY(-100%);
+    }
+    70% {
+      transform: translateY(calc(100% - 70px)); /* Altura del piso - altura de la mancuerna */
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  
+  @keyframes floor-break {
+    0% {
+      height: 20px;
+    }
+    100% {
+      height: 5px; /* Altura de la rotura del piso */
+      background-color: #ff0000; /* Color de la rotura */
+    }
+  }

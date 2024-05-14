@@ -9,7 +9,7 @@
     <title>gym</title>
 </head>
 <body>
-    <div class="titulo"><h2> Bienvenido a tu asistente de gym</h2></div>
+    <div class="titulo"><img src="img/logo.jpeg" alt="" class="titulo"></div>
 
     <div class="form_container"> 
         <div class="form_group">
@@ -30,14 +30,15 @@
     </div>
 
     <div class="cont-calcular">
-        <button onclick="mostrarPlan()" class="btn-calcular">Mostrar plan</button>
-        <div id="resultado2"></div>
+        <button onclick="mostrarPlan()" class="btn-calcular" id="btn-calcular">Mostrar plan</button>
+        <div id="resultado2" class="plan-container" style="display: none;"></div>
+        <div class="scene " id="scene">
+            <div class="floor"></div>
+            <div class="mancuerna"></div>
+        </div>
     </div>
 
-    <div class="scene">
-        <div class="floor"></div>
-        <div class="mancuerna"></div>
-      </div>
+
 
 </body>
 <script src="inicio.js"></script>

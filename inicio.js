@@ -5,6 +5,7 @@ function calcularIMC() {
     var imc = peso / ((altura / 100) * (altura / 100));
   
     var resultado = '';
+    
     if (isNaN(imc)) {
       resultado = 'Por favor, ingrese valores numéricos válidos.';
     } else {
@@ -42,9 +43,9 @@ var boton = document.getElementById('btn-calcular').addEventListener("click", fu
       resultado2 = 'Por favor, ingrese valores numéricos válidos.';
     } if(imc > 0 && imc < 18.5) {
       resultado2 = '<img src="img/1.jpeg" class="plan" alt="">';
-    } if(imc >= 18.5 && imc <= 24.99){
+    } if(imc >= 18.5 && imc < 25){
       resultado2 = '<img src="img/2.jpeg" class="plan" alt="">';
-    } if(imc >= 25 && imc <= 29.99){
+    } if(imc >= 25 && imc < 30){
       resultado2 = '<img src="img/3.jpeg" class="plan" alt="">';
     } if(imc >= 30){
       resultado2 = '<img src="img/4.jpeg" class="plan" alt="">';

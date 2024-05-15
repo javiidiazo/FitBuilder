@@ -130,26 +130,6 @@ select{
   width: 70%;
 }
 
-/* .loader1 {
-  width: 100px;
-  height: 100px;
-  /* background: url('img/pesa.png') no-repeat center; */
-  /* animation: fall .5s linear forwards;
-  color: #f1f1f1;
-  background-color: #f1f1f1;
-  display: none;
-} */
-
-
-
-/* @keyframes fall {
-  0% { transform: translateX(-200%); }
-  200% { transform: translateX(0); }
-}
-
-.plan-container {
-  display: none;
-} */ 
 
 
 .scene {
@@ -163,7 +143,6 @@ select{
   
   .floor {
     position: absolute;
-    /* bottom: 0; */
     width: 100%;
     height: 80px;
     background-color: #fff;
@@ -176,7 +155,7 @@ select{
     background-image: url(img/image-Photoroom.png);
     background-size: cover;
     position: absolute;
-    bottom: 20px; /*Altura inicial*/
+    bottom: 20px; 
     animation: mancuerna-fall 1s linear forwards, floor-break 0.1s 1s linear forwards;
     top: 0px;
   }
@@ -191,21 +170,21 @@ select{
       transform: translateY(-100%);
     }
     70% {
-      transform: translateY(calc(100% - 150px)); /*Altura del piso - altura de la mancuerna*/
+      transform: translateY(calc(100% - 150px)); 
      }
     100% {
       transform: translateY(100%);
     }
   }
   
-  @keyframes floor-break {
-    0% {
-      height: 20px;
+@keyframes floor-break {
+  0% {
+    height: 20px;
+  }
+  100% {
+    height: 100px;
+    background-image: url(img/imageCopy2.png);
+    background-size: cover;
+    width: 100%;
     }
-    100% {
-      height: 100px; /*Altura de la rotura del piso*/
-     background-image: url(img/image\ copy\ 2.png);
-      background-size: cover;
-     width: 100%;
-     }
-  } 
+} 

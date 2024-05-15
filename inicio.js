@@ -52,3 +52,10 @@ var boton = document.getElementById('btn-calcular').addEventListener("click", fu
 
     document.getElementById('resultado2').innerHTML = resultado2;
   }
+
+
+  function limitarCaracteres(elemento, maxLength) {
+    if (elemento.value.length > maxLength) {
+        elemento.value = elemento.value.slice(0, maxLength);
+    }
+}

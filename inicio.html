@@ -13,13 +13,13 @@
 
     <div class="form_container"> 
         <div class="form_group">
-            <input type="number" id="peso" class="form_input" name="peso" required oninput="limitarCaracteres(this, 3)" placeholder=" ">
+            <input type="number" id="peso" class="form_input" name="peso" min="0" required oninput="limitarCaracteres(this, 3)" placeholder=" ">
             <label for="peso" class="form_label">Peso (kg)</label>
             <span class="form_line"></span>
         </div>
         <div class="form_group">
             <i class="icon fa-solid fa-eye" id="eye"></i>
-            <input type="number" id="altura" class="form_input" name="altura" oninput="limitarCaracteres(this, 3)" placeholder=" ">
+            <input type="number" id="altura" class="form_input" name="altura" min="0" oninput="limitarCaracteres(this, 3)" placeholder=" ">
             <label for="altura" class="form_label">Altura (cm)</label>
             <span class="form_line"></span>
         </div>

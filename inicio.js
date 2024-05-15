@@ -7,7 +7,10 @@ function calcularIMC() {
     var resultado = '';
     if (isNaN(imc)) {
       resultado = 'Por favor, ingrese valores numéricos válidos.';
-    } else {
+    }else if(altura < 0 || peso < 0){
+      resultado = "ni el peso, ni la altura pueden ser numeros negativos";
+    }
+    else {
       resultado = 'Su IMC es: ' + imc.toFixed(2);
     }
   

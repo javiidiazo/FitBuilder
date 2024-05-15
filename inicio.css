@@ -33,6 +33,24 @@ body{
     color: #fff;
 }
 
+input{
+    background-color: var(--buscador);
+    border: 1px solid var(--letras);
+    color: var(--letras);
+    border-radius: 4px;
+    padding: 3px;
+    outline: none;
+}
+
+select{
+    background-color: var(--buscador);
+    border: 1px solid var(--letras);
+    color: var(--letras);
+    border-radius: 4px;
+    padding: 3px;
+    outline: none;
+}
+
 .cont-calcular{
     width: 100%;
     display: flex;

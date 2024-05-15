@@ -25,9 +25,9 @@ function calcularIMC() {
       resultado = 'Por favor, ingrese valores numéricos válidos.';
     } if(imc > 0 && imc < 18.5) {
       resultado2 = 'peso bajo';
-    } if(imc >= 18.5 && imc <= 24.9){
+    } if(imc >= 18.5 && imc <= 24.99){
       resultado2 = 'peso saludable';
-    } if(imc >= 25 && imc <= 29.9){
+    } if(imc >= 25 && imc <= 29.99){
       resultado2 = 'sobre peso';
     } if(imc >= 30){
       resultado2 = 'obesidad';

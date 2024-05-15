@@ -45,9 +45,9 @@ var boton = document.getElementById('btn-calcular').addEventListener("click", fu
       resultado2 = 'Por favor, ingrese valores numéricos válidos.';
     } else if(imc > 0 && imc < 18.5) {
       resultado2 = '<img src="img/1.jpeg" class="plan" alt="">';
-    } else if(imc >= 18.5 && imc <= 24.99){
+    } else if(imc >= 18.5 && imc < 25){
       resultado2 = '<img src="img/2.jpeg" class="plan" alt="">';
-    } else if(imc >= 25 && imc <= 29.99){
+    } else if(imc >= 25 && imc <30){
       resultado2 = '<img src="img/3.jpeg" class="plan" alt="">';
     } else if(imc >= 30){
       resultado2 = '<img src="img/4.jpeg" class="plan" alt="">';

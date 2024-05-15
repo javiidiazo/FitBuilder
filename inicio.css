@@ -9,16 +9,17 @@
     --buscador: rgb(72, 72, 72);
     --logoBlue: #3c75bf;
     --letras: #f1f1f1;
+    --fondo: rgb(254, 249, 245);
 }
 
 body{
-    background-color: rgb(35, 35, 35);
+    background-color: var(--fondo);
     font-family: "Lato", sans-serif;
 }
 
 .titulo{
     width: 100%;
-    color:var(--logoBlue);
+    color:var(--buscador);
     text-align: center;
     height: 150px;
     align-content: center;
@@ -84,7 +85,7 @@ body{
 
 input{
     background-color: var(--buscador);
-    border: 1px solid var(--letras);
+    border: 1px solid var(--buscador);
     color: var(--letras);
     border-radius: 4px;
     padding: 3px;
@@ -107,7 +108,7 @@ select{
     align-items: center;
     margin-top: 30px;
     flex-direction: column;
-    color: #fff;
+    color: var(--buscador);
 }
 
 .btn-calcular{

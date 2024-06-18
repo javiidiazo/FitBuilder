@@ -16,7 +16,7 @@ const calcularIMC = () => {
   document.getElementById('resultado').innerHTML = resultado;
 };
 
-var boton = document.getElementById('btn-calcular').addEventListener("click", () => {
+document.getElementById('btn-calcular').addEventListener("click", () => {
   document.getElementById('scene').style.display = 'flex';
   document.getElementById('resultado2').style.display = 'none';
 
@@ -65,14 +65,36 @@ const runCanvasAnimation = (callback) => {
   const weightHeight = 50;
   const weightWidth = 100;
   const floorY = canvas.height - weightHeight;
+  let velocity = 5;
+  let bounce = 0.6;
+  let damping = 0.9;
+  let animating = true;
+  let bounceCount = 0;
+  const maxBounces = 3;
 
   mancuernaImg.onload = () => {
       const animate = () => {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.drawImage(mancuernaImg, (canvas.width - weightWidth) / 2, weightY, weightWidth, weightHeight);
 
-          if (weightY < floorY) {
-              weightY += 5;
+          if (animating) {
+              weightY += velocity;
+              velocity += 0.8; // simulate gravity
+
+              if (weightY >= floorY) {
+                  weightY = floorY;
+                  velocity = -velocity * bounce;
+                  bounceCount++;
+
+                  // Apply damping to reduce energy on each bounce
+                  if (bounceCount >= maxBounces || Math.abs(velocity) < 1) {
+                      animating = false;
+                      setTimeout(callback, 500);
+                  }
+              }
+          }
+
+          if (animating || Math.abs(velocity) >= 1) {
               requestAnimationFrame(animate);
           } else {
               ctx.fillStyle = 'black';

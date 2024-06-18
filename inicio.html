@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="inicio.css">
     <title>gym</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 <body>
     <div class="titulo"><img src="img/logo.jpeg" alt="" class="titulo"></div>
@@ -34,13 +31,10 @@
     <div class="cont-calcular">
         <button onclick="mostrarPlan()" class="btn-calcular" id="btn-calcular">Mostrar plan</button>
         <div id="resultado2" class="plan-container" style="display: none;"></div>
-        <div class="scene " id="scene">
-            <div class="floor"></div>
-            <div class="mancuerna"></div>
+        <div class="scene" id="scene">
+            <canvas id="animationCanvas" width="800" height="400"></canvas>
         </div>
     </div>
-
-
 
 </body>
 <script src="inicio.js"></script>

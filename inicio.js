@@ -16,51 +16,71 @@ const calcularIMC = () => {
   document.getElementById('resultado').innerHTML = resultado;
 };
 
-
 var boton = document.getElementById('btn-calcular').addEventListener("click", () => {
-  // Mostrar loader al cargar la página
   document.getElementById('scene').style.display = 'flex';
   document.getElementById('resultado2').style.display = 'none';
 
-  // Simular carga de imágenes después de 2 segundos (simulación de la pesa cayendo)
-  setTimeout(() => {
-    // Ocultar el loader
-    document.getElementById('scene').style.display = 'none';
-
-    // Mostrar imágenes del plan de gimnasio
-    document.getElementById('resultado2').style.display = 'flex';
-    // document.getElementById('resultado2').innerHTML = mostrarPlan();
-}, 2000);// 2000 milisegundos (2 segundos)
+  runCanvasAnimation(() => {
+      document.getElementById('scene').style.display = 'none';
+      document.getElementById('resultado2').style.display = 'flex';
+  });
 });
 
-  // Función para calcular el IMC y mostrar el plan de gimnasio
-  const mostrarPlan = () => {
-    const altura = document.getElementById('altura').value;
-    const peso = document.getElementById('peso').value;
+const mostrarPlan = () => {
+  const altura = document.getElementById('altura').value;
+  const peso = document.getElementById('peso').value;
 
-    const imc = peso / ((altura / 100) * (altura / 100));
+  const imc = peso / ((altura / 100) * (altura / 100));
 
-    let resultado2 = '';
-    if (isNaN(imc)) {
-        resultado2 = 'Por favor, ingrese valores numéricos válidos.';
-    } else if (imc > 0 && imc < 18.5) {
-        resultado2 = '<img src="img/1.jpeg" class="plan" alt="">';
-    } else if (imc >= 18.5 && imc < 25) {
-        resultado2 = '<img src="img/2.jpeg" class="plan" alt="">';
-    } else if (imc >= 25 && imc < 30) {
-        resultado2 = '<img src="img/3.jpeg" class="plan" alt="">';
-    } else if (imc >= 30) {
-        resultado2 = '<img src="img/4.jpeg" class="plan" alt="">';
-    }
+  let resultado2 = '';
+  if (isNaN(imc)) {
+      resultado2 = 'Por favor, ingrese valores numéricos válidos.';
+  } else if (imc > 0 && imc < 18.5) {
+      resultado2 = '<img src="img/1.jpeg" class="plan" alt="">';
+  } else if (imc >= 18.5 && imc < 25) {
+      resultado2 = '<img src="img/2.jpeg" class="plan" alt="">';
+  } else if (imc >= 25 && imc < 30) {
+      resultado2 = '<img src="img/3.jpeg" class="plan" alt="">';
+  } else if (imc >= 30) {
+      resultado2 = '<img src="img/4.jpeg" class="plan" alt="">';
+  }
 
-    document.getElementById('resultado2').innerHTML = resultado2;
+  document.getElementById('resultado2').innerHTML = resultado2;
 };
-
-
 
 const limitarCaracteres = (elemento, maxLength) => {
   if (elemento.value.length > maxLength) {
-    elemento.value = elemento.value.slice(0, maxLength);
+      elemento.value = elemento.value.slice(0, maxLength);
   }
 };
 
+const runCanvasAnimation = (callback) => {
+  const canvas = document.getElementById('animationCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const mancuernaImg = new Image();
+  mancuernaImg.src = 'img/mancuerna.png'; // Asegúrate de tener esta imagen en la carpeta correcta
+
+  let weightY = 0;
+  const weightHeight = 50;
+  const weightWidth = 100;
+  const floorY = canvas.height - weightHeight;
+
+  mancuernaImg.onload = () => {
+      const animate = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(mancuernaImg, (canvas.width - weightWidth) / 2, weightY, weightWidth, weightHeight);
+
+          if (weightY < floorY) {
+              weightY += 5;
+              requestAnimationFrame(animate);
+          } else {
+              ctx.fillStyle = 'black';
+              ctx.fillRect(0, floorY + weightHeight, canvas.width, 10);
+              setTimeout(callback, 1000);
+          }
+      };
+
+      animate();
+  };
+};

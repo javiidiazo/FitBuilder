@@ -118,6 +118,8 @@ select {
   border: 1px solid #000;
   border-radius: 4px;
   margin-bottom: 5px;
+  color: var(--letras);
+  text-decoration: none;
 }
 
 #resultado2 {

@@ -9,12 +9,17 @@ const calcularIMC = () => {
       resultado = 'Por favor, ingrese valores numéricos válidos.';
   } else if (altura < 0 || peso < 0) {
       resultado = 'Ni el peso ni la altura pueden ser números negativos.';
-  } else {
+  }  else if (peso > 600) {
+    resultado = 'El peso no puede ser mayor a 600kg.';
+    } else if (altura > 251 || altura < 40) {
+        resultado = 'La altura no puede ser mayor a 251cm ni menor a 40cm.';
+    }else {
       resultado = `Su IMC es: ${imc.toFixed(2)}`;
   }
 
   document.getElementById('resultado').innerHTML = resultado;
 };
+
 
 document.getElementById('btn-calcular').addEventListener("click", () => {
   document.getElementById('scene').style.display = 'flex';

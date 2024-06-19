@@ -64,7 +64,7 @@ const runCanvasAnimation = (callback) => {
   let weightY = 0;
   const weightHeight = 50;
   const weightWidth = 100;
-  const floorY = canvas.height - weightHeight;
+  const floorY = canvas.height - 175;
   let velocity = 5;
   let bounce = 0.6;
   let damping = 0.9;

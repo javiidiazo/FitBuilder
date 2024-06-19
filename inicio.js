@@ -38,7 +38,7 @@ const mostrarPlan = () => {
   } else if (imc > 0 && imc < 18.5) {
       resultado2 = '<img src="img/1.jpeg" class="plan" alt="">';
   } else if (imc >= 18.5 && imc < 25) {
-      resultado2 = '<img src="img/2.jpeg" class="plan" alt="">';
+      resultado2 = '<img src="img/plan de 18 a 25.jpeg" class="plan" alt="">';
   } else if (imc >= 25 && imc < 30) {
       resultado2 = '<img src="img/3.jpeg" class="plan" alt="">';
   } else if (imc >= 30) {
